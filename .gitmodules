@@ -1,0 +1,6 @@
+[submodule "ft_printf"]
+	path = ft_printf
+	url = git@github.com:semx2a/ft_printf.git
+[submodule "Libft"]
+	path = Libft
+	url = git@github.com:semx2a/Libft.git
