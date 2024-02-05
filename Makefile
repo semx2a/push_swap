@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2024/02/02 18:16:23 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/05 21:54:20 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,6 +132,7 @@ endif
 
 fclean: header fcleanlib h2 clean
 	@$(RM) $(NAME)
+	@$(RM) checker
 	@echo "$(HIORANGE)removing $(NAME):[RM]$(RESET)" | $(SPACE)
 	
 re:	header fclean all

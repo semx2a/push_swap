@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:27:53 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 17:57:01 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/05 21:18:53 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@
 # include <stdio.h>
 
 /*		ERROR			 */
-# define ERR		"Error"
-# define INT_MIN	-2147483648
-# define INT_MAX	2147483647
+# define ERR			"Error"
+# define INT_MIN		-2147483648
+# define INT_MAX		2147483647
+# define BUFFER_SIZE	1024
 
 /*		LINKED LISTS
 		numbers structure	*/
