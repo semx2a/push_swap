@@ -6,11 +6,11 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:01:02 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 17:14:26 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/05 16:55:23 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"}
+#include "checker_bonus.h"
 
 void	free_strtab(char **tab, int size)
 {
