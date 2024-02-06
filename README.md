@@ -2,13 +2,9 @@
 
 ## Summary
 
-This project challenges you to sort data on a stack using a limited set of instructions in the minimum possible number of operations. To succeed, you'll need to manipulate different sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
+This project challenge is to sort data on a stack using a limited set of instructions in the minimum possible number of operations. To succeed, one needs to manipulate different sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
 
-Push_Swap is a simple yet effective algorithmic exercise: sorting data. You have a set of integers, two stacks, and a set of instructions to manipulate these stacks. The goal is to create a C program, named "push_swap", which calculates and displays the smallest program, made of Push_Swap instructions, that sorts the integers passed as parameters.
-
-## Overview
-
-Push_Swap is a project that focuses on basic sorting algorithms and their complexities. It challenges you to sort data on a stack using a limited set of instructions in the least possible number of operations. This project involves manipulating different sorting algorithms and choosing the most appropriate solution(s) for optimized data sorting.
+Push_Swap is a simple yet effective algorithmic exercise: sorting data. It takes a set of integers, two stacks, and a set of instructions to manipulate these stacks. The goal is to create a C program, named "push_swap", which calculates and displays the smallest program, made of Push_Swap instructions, that sorts the integers passed as parameters.
 
 ## Skills Gained
 
@@ -18,10 +14,6 @@ Push_Swap is a project that focuses on basic sorting algorithms and their comple
 - Improved coding skills in C.
 - Learned to measure and optimize the performance of algorithms.
 - Gained experience in writing clean, efficient, and well-documented code.
-
-## The Challenge
-
-The challenge was to create a program in C named "push_swap" which calculates and displays on the standard output the smallest program using Push_Swap instructions to sort the integers passed as parameters.
 
 ## Mandatory Part
 
