@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2024/02/08 17:11:15 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/12 18:42:02 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ ifeq (debug, $(filter debug,$(MAKECMDGOALS)))
 	CFLAGS	+=	-g3
 endif
 ifeq (sanadd, $(filter sanadd,$(MAKECMDGOALS)))
-	CFLAGS	+=	-fsanitize=address
+	CFLAGS	+=	-g3 -fsanitize=address
 endif
 ifeq (santhread, $(filter santhread,$(MAKECMDGOALS)))
 	CFLAGS	+=	-fsanitize=thread
@@ -107,11 +107,11 @@ $(NAME): $(OBJ) $(DEP)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LDFLAGS)
 	@echo "$(HIGREEN)compiling $(NAME):[OK]$(RESET)" | $(SPACE)
 
-debug:		all
+debug:		fclean all
 
-sanadd:		all
+sanadd:		fclean all
 
-santhread:	all
+santhread:	fclean all
 
 lib:
 ifeq ($(IS_LIB),true)
