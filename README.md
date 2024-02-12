@@ -84,3 +84,18 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 ```bash
 ARG="0 9 1 3 2 6 5 4 8 7"; ./push_swap $ARG | ./checker $ARG
 ```
+## Troubleshooting
+
+If you encounter the following error when running make:
+
+```shell
+make: *** No rule to make target 'libft.a', needed by 'pipex'.  Stop.
+
+```
+
+You can fix it by running the following command:
+
+```shell
+git submodule update --init --recursive
+
+```
