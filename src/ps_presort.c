@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:55:11 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 17:57:01 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/12 18:59:31 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,9 @@ void	pre_sort(t_stack *a, t_stack *b)
 	int	i;
 
 	idx = find_sqn(a);
-	i = best_sqn(a, idx);
+	i = 1;
+	if (idx != 0)
+		i = best_sqn(a, idx);
 	med = find_median(a);
 	while (stack_size(a) != i)
 	{

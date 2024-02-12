@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:00:55 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 19:18:18 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/12 17:49:37 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static void	push_swap(t_main m)
 	sorted_arr(m.size - 1, m.arr);
 	init_stack(m.a);
 	fill_stack(m.a, m.arr, m.size);
-	if (!reverse_sorted_stack(m.a))
-		return ;
 	init_stack(m.b);
 	if (m.size <= 3)
 		sort_three(m.a);
