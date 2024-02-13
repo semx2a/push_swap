@@ -53,6 +53,17 @@ The aim of the "push_swap" program is to sort the stacks using the smallest poss
 - If no arguments are specified, the program must display nothing and return the prompt.
 - In the event of an error, you must display "Error" followed by a '\n' on the error output. For example, if some parameters are not numbers, do not fit into an int, or if there are duplicates.
 
+### Maximum allowed number of operations
+
+Find below the maximum number of operations allowed for different numbers of integers in the stack:
+
+| Number of Integers | Maximum Number of Operations |
+|--------------------|------------------------------|
+| 3                  | 3                            |
+| 5                  | 12                           |
+| 100                | 700                          |
+| 500                | 5500                         |
+
 ### Usage
 
 ```bash
@@ -61,6 +72,13 @@ The aim of the "push_swap" program is to sort the stacks using the smallest poss
 
 ```bash
 ./push_swap 0 9 1 3 2 6 5 4 8 7
+```
+
+You can also use the provided tester which will check if the output of your program is a valid sequence of instructions to sort the stack.
+
+```bash
+chmod +x test.sh
+./test.sh
 ```
 
 ## Bonus Part
@@ -84,12 +102,21 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 ```bash
 ARG="0 9 1 3 2 6 5 4 8 7"; ./push_swap $ARG | ./checker $ARG
 ```
+
+You can also use the provided tester which will check if the output of your program is a valid sequence of instructions to sort the stack.
+
+```bash
+chmod +x test.sh
+make
+./test.sh bonus
+```
+
 ## Troubleshooting
 
 If you encounter the following error when running make:
 
 ```shell
-make: *** No rule to make target 'libft.a', needed by 'pipex'.  Stop.
+make: *** No rule to make target 'libft.a', needed by 'push_swap'.  Stop.
 
 ```
 
