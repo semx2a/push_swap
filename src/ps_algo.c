@@ -6,12 +6,15 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 19:19:18 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 18:01:32 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/13 20:32:03 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Find the smallest and biggest numbers of the stack and stores them in
+a two dimentional array, where arr[0] stores the smallest number, and arr[1]
+stores the biggest number.*/
 static int	*find_minmax(t_stack *s)
 {
 	t_number	*tmp;
@@ -36,7 +39,17 @@ static int	*find_minmax(t_stack *s)
 	return (arr);
 }
 
-/* simuler le placement final de toute la stack b dans la stack a */
+/* This function simulates the final placement of stack B numbers into stack A
+1- It allocates a two dimentional array of stack B's size.
+2- The minmax function is called to find the smallest and biggest numbers 
+in stack A
+3- The idx_alloc function allocates the index of stack B's numbers in stack A 
+4- The ret_alloc function returns the result of the bestmv function, an array 
+of 2 integers, where arr[0] is the stack A's index and arr[1] is the stack B's 
+index
+5- The two dimentional array is freed
+6- The array of 2 is returned
+*/
 static int	*find_idx(t_stack *sa, t_stack *sb, int size)
 {
 	t_obj	a;
@@ -57,6 +70,7 @@ static int	*find_idx(t_stack *sa, t_stack *sb, int size)
 	return (a.arr);
 }
 
+/* Sort stack of 3 numbers and less */
 void	sort_three(t_stack *a)
 {
 	while (sorted_stack(a) != 0)
@@ -70,6 +84,11 @@ void	sort_three(t_stack *a)
 	}
 }
 
+/* Sort stack of 5 numbers and less: 
+1. Find the smallest and biggest numbers of the stack.
+2. Push these two numbers into stack 
+3. Sort the 3 remaining numbers with the sort_three algorithm
+4. Push and place the smallest and biggest numbers back into stack A*/
 void	sort_five(t_stack *a, t_stack *b)
 {
 	int	*arr;
@@ -99,6 +118,23 @@ void	sort_five(t_stack *a, t_stack *b)
 	free(arr);
 }
 
+/* This function sorts stacks bigger than 5 numbers by performing the following
+actions: 
+1- Update the B stack's size
+2- Update the indexes in both A and B stack
+3- Find the indexes both in A and B stack that requires the less moves, and
+stores them in a two dimentional array where 
+	arr[0] == Stack A's index
+	arr[0] == Stack B's index
+4- mv_ab performs either double reverse or double rotates and updates each
+dimention of the array depending on the number of actions it performed.
+5- mv_b either reverses or rotates Stack B depending on the number left in arr[1]
+6- mv_a either reverses or rotates Stack A depending on the number left in arr[0]
+7- push_a transfers the top number of Stack B into Stack A, finalizing a round 
+of sorting
+This sequence repeats itself until stack B is empty.
+The resulting stack is sorted with no regards to ascending or descending order,
+but is defintely sorted. */
 void	sort(t_stack *a, t_stack *b)
 {
 	t_obj	o;

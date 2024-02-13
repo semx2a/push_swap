@@ -6,19 +6,24 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:29:50 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 16:59:28 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/13 19:33:43 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* This function tests if the stack B number being currently investigated is the
+overall smallest or biggest number of stack A's current state.
+It allocates tab[0] with the stack A's index. This index is the location of 
+stack B's number in stack A*/
 static void	is_minmax(t_obj a, t_obj b)
 {
 	if (b.tmp->nb <= a.arr[0])
 	{
 		while (a.tmp && a.tmp->nb != a.arr[0])
 			a.tmp = a.tmp->next;
-		a.tab[a.i][0] = a.tmp->idx;
+		if (a.tmp != NULL)
+			a.tab[a.i][0] = a.tmp->idx;
 	}
 	else if (b.tmp->nb >= a.arr[1])
 	{
@@ -27,10 +32,15 @@ static void	is_minmax(t_obj a, t_obj b)
 		if (a.tmp->next == NULL && b.tmp->nb > a.tmp->nb)
 			a.tab[a.i][0] = 0;
 		else
-			a.tab[a.i][0] = a.tmp->next->idx;
+			if (a.tmp->next != NULL)
+				a.tab[a.i][0] = a.tmp->next->idx;
 	}
 }
 
+/* This function tests where the stack B number being currently investigated
+should be located in stack A.
+The stack B number is neither the smallest nor the biggest number of 
+stack A's current state */
 static void	isnt_minmax(t_obj a, t_obj b, t_stack *sa)
 {
 	while (a.tmp)
@@ -50,11 +60,14 @@ static void	isnt_minmax(t_obj a, t_obj b, t_stack *sa)
 	}
 }
 
-/*	allocates a tab with two entries, the size of stack b;
-each entries corresponds to an integer in stack b, in ascending order;
-tab[0] == the idx corresponding to the position this int should be located
-in stack a;
-tab[1] == the idx of the number in stack b we are trying to place */
+/* This function takes two stacks and a pointer to stack A as arguments.
+It searches the best position for each stack B numbers to be positionned in
+stack A.
+tab[pos][0] == the A stack index where the stack B number being investigated
+should be located at;
+tab[pos][1] == the stack B index of the number we are trying to allocate a slot for;
+a.arr[0] == min of stack A;
+a.arr[1] == max of stack A*/
 void	idx_alloc(t_obj a, t_obj b, t_stack *sa)
 {
 	while (b.tmp)

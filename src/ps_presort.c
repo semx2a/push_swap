@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:55:11 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/12 18:59:31 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/13 19:33:43 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	hold_nb(t_obj *o)
 	o->i += 1;
 }
 
-/* finds the longest sorted number sequence in stack a */
+/* Finds the longest sorted number sequence in stack A */
 static int	best_sqn(t_stack *a, int idx)
 {
 	t_obj	o;
@@ -78,8 +78,8 @@ static int	best_sqn(t_stack *a, int idx)
 	return (o.i);
 }
 
-/* finds the integer with the best potential for the longest sorted number 
-sequence in stack a */
+/* Finds the integer with the best potential for the longest sorted number 
+sequence in stack A */
 static int	find_sqn(t_stack *a)
 {
 	t_number	*tmp_a;
@@ -106,6 +106,10 @@ static int	find_sqn(t_stack *a)
 	return (hold->idx);
 }
 
+/* This function selects the longest sorted sequence and pushes the rest
+in stack B, leaving stack A already sorted.
+Numbers with an idx of -1 represent the sorted stack.
+Numbers with an idx of 0 represent the unsorted stack.*/
 void	pre_sort(t_stack *a, t_stack *b)
 {
 	int	idx;

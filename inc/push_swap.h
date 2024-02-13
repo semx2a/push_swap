@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:00:46 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 19:16:55 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/13 20:32:00 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	fill_arr(char **av, int ac, int *arr);
 int		find_ret(int **tab, int size);
 
 /*		ps_bestmv.c		*/
-int		*find_bestmv(t_stack *b, int *arr, int **tab, int size);
+int		*find_bestmv(int *arr, int **tab, int size);
 
 /*		ps_compare.c	*/
 int		*ret_alloc(t_stack *b, int **tab, int size);

@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 14:17:37 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 18:01:32 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/13 19:10:56 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,10 @@ void	swap_swap(t_stack *sa, t_stack *sb)
 	}
 }
 
+/* This function perfoms double reverses or double rotates while the indexes
+in arr[0] (i.e. Stack A index) and arr[1] (i.e. Stack B index) differ from 0.
+If either of the indexes reaches 0, the algorithm stop and returns the modified
+array*/
 int	*mv_ab(t_stack *a, t_stack *b, int *arr)
 {
 	if (arr[0] < 0 && arr[1] < 0)

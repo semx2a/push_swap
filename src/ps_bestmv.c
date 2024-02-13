@@ -6,22 +6,17 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 19:18:27 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 16:59:28 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/13 20:38:20 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* determins which of the two selected moves is the less expensive */
-static int	*bestmv(t_stack *b, t_obj *l, t_obj *h, int **tab)
+/* This function determines which of the two selected indexes is the less 
+expensive in terms of moves by comoaring the computed values.*/
+static int	*bestmv(t_obj *l, t_obj *h, int **tab)
 {
 	l->arr = xmalloc(sizeof(int) * 2);
-	h->tmp_hd = b->head;
-	h->tmp_tl = b->tail;
-	while (h->tmp_hd->idx != tab[l->pos][1])
-		h->tmp_hd = h->tmp_hd->next;
-	while (h->tmp_tl->idx != tab[h->pos][1])
-		h->tmp_tl = h->tmp_tl->prev;
 	if (l->val < h->val)
 	{
 		l->arr[0] = tab[l->pos][0];
@@ -51,10 +46,11 @@ static void	put_valpos(t_obj *l, t_obj *h, int *arr, int size)
 	}
 }
 
-/* looks for 2 best moves: 
-- one idex starts from top to middle
+/* This function performs tests to find the 2 best moves in stack B:
+To do that, it goes through all pairs of indexes stored in the tab array 
+- one starts from top to middle
 - the other starts from bottom to middle */
-int	*find_bestmv(t_stack *b, int *arr, int **tab, int size)
+int	*find_bestmv(int *arr, int **tab, int size)
 {
 	t_obj	l;
 	t_obj	h;
@@ -72,6 +68,6 @@ int	*find_bestmv(t_stack *b, int *arr, int **tab, int size)
 		h.j--;
 	}
 	free(arr);
-	l.arr = bestmv(b, &l, &h, tab);
+	l.arr = bestmv(&l, &h, tab);
 	return (l.arr);
 }
