@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:51:59 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/13 20:31:58 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/14 15:11:01 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 Else, it retuns 0. */
 static int	is_comb(int i, int j)
 {
-	if ((i > 0 && j > 0) || (i < 0 && j < 0))
-		return (1);
-	return (0);
+	return ((i > 0 && j > 0) || (i < 0 && j < 0));
 }
 
 static int	absolute_val(int i)
@@ -36,18 +34,14 @@ static void	put_comb(t_obj *o, int **tab)
 {
 	if (tab[o->i][0] > 0)
 	{
-		if (tab[o->i][0] > tab[o->i][1])
-			o->arr[o->i] = tab[o->i][0];
-		else if (tab[o->i][0] < tab[o->i][1])
+		if (tab[o->i][0] < tab[o->i][1])
 			o->arr[o->i] = tab[o->i][1];
 		else
 			o->arr[o->i] = tab[o->i][0];
 	}
 	else
 	{
-		if (tab[o->i][0] < tab[o->i][1])
-			o->arr[o->i] = absolute_val(tab[o->i][0]);
-		else if (tab[o->i][0] > tab[o->i][1])
+		if (tab[o->i][0] > tab[o->i][1])
 			o->arr[o->i] = absolute_val(tab[o->i][1]);
 		else
 			o->arr[o->i] = absolute_val(tab[o->i][0]);
