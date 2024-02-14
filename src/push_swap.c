@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:00:55 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/13 20:24:57 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/14 14:49:29 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ static void	push_swap(t_main m)
 		pre_sort(m.a, m.b);
 		sort(m.a, m.b);
 		final_check(m.a);
-/* 		while (m.a->head) {
-			printf("%d\n", m.a->head->nb);
-			m.a->head = m.a->head->next;
-		} */
 	}
 }
 

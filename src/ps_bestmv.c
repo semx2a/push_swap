@@ -6,14 +6,14 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 19:18:27 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/13 20:38:20 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/14 15:15:02 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* This function determines which of the two selected indexes is the less 
-expensive in terms of moves by comoaring the computed values.*/
+expensive in terms of moves by comparing the computed values.*/
 static int	*bestmv(t_obj *l, t_obj *h, int **tab)
 {
 	l->arr = xmalloc(sizeof(int) * 2);
