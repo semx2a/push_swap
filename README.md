@@ -87,11 +87,15 @@ The bonus part of the project involves creating your own checker program. This w
 
 ### The "checker" Program
 
-The "checker" program must also be written in C. It should take stack a as a list of integers as an argument. It must then wait and read instructions from the standard input, each instruction followed by a '\n'. Once all instructions have been read, the program executes them on the stack of integers passed as an argument.
+The "checker" program must also be written in C. It should take the same argument as the push_swap execurable. It must then wait and read instructions from the standard input, each instruction followed by a '\n'. Once all instructions have been read, the program applies them to its stack of integers, effectively following the main executable's orders.
 
-If, following execution, stack a is sorted and stack b is empty, the program must display "OK" followed by a '\n' on the standard output. Otherwise, it must display "KO" followed by a '\n' on the standard output.
+If, following execution, stack A is sorted and stack B is empty, the program must display "OK" followed by a '\n' on the standard output. Otherwise, it must display "KO" followed by a '\n' on the standard output.
 
-In the event of an error, you must display "Error" followed by a '\n' on the error output.
+In the event of an error, the program must display "Error" followed by a '\n' on the error output.
+
+If the program receives no arguments, it must display nothing and return the prompt.
+
+Additionally, if the program receives an argument different from the list of integers, it has no way of knowing if the argument list is the same as the one used by the push_swap program. In this case, the program's bethavior is undefined.
 
 ### Usage
 

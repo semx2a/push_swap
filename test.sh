@@ -55,9 +55,13 @@ if [ "$1" == "clean" ]; then
     echo "Cleaning complete."
     exit 0
 elif [ "$1" == "bonus" ]; then
-	make bonus
+	if [ ! -x "./checker" ]; then
+		make bonus
+	fi	
 	BONUS=true
-elif [ ! -x "./push_swap" ]; then
+fi
+
+if [ ! -x "./push_swap" ]; then
 	make
 fi
 
